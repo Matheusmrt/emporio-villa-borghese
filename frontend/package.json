@@ -1,0 +1,9 @@
+
+{
+  "name": "emporio-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "echo 'rodando frontend'",
+    "build": "echo 'build frontend'"
+  }
+}
