@@ -3,19 +3,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Empório Villa Borghese</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Login - Empório Villa Borghese</title>
+  <script>
+    async function fazerLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      const res = await fetch('https://emporio-villa-backend.onrender.com/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password: senha })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        alert("Login bem-sucedido! Token: " + data.token);
+        window.location.href = "/pedidos.html";
+      } else {
+        alert("Login falhou. Verifique o email e a senha.");
+      }
+    }
+  </script>
 </head>
-<body>
-  <header><img src="logo.png" alt="Logo" height="60" /></header>
-  <main>
-    <h1>Login</h1>
-    <form>
-      <input type="email" placeholder="Email" /><br/>
-      <input type="password" placeholder="Senha" /><br/>
-      <button>Entrar</button>
-    </form>
-  </main>
+<body style="font-family: sans-serif; background: #fff8f0; padding: 2rem">
+  <h1>Login 🍽️ Empório Villa Borghese</h1>
+  <form onsubmit="fazerLogin(event)">
+    <input id="email" type="email" placeholder="Email" required /><br/><br/>
+    <input id="senha" type="password" placeholder="Senha" required /><br/><br/>
+    <button type="submit">Entrar</button>
+  </form>
 </body>
 </html>
