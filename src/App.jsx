@@ -1,10 +1,10 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Login from "./pages/Login";
-import Cadastro from "./pages/Cadastro";
-import Pedidos from "./pages/Pedidos";
-import Relatorios from "./pages/Relatorios";
+import Layout from "./pages/Layout.jsx";
+import Login from "./pages/Login.jsx";
+import Cadastro from "./pages/Cadastro.jsx";
+import Pedidos from "./pages/Pedidos.jsx";
+import Relatorios from "./pages/Relatorios.jsx";
 
 function App() {
   return (
