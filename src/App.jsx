@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app">
       <h1>Empório Villa Borghese</h1>
-      <p>Projeto funcionando com Vite + React</p>
+      <p>Frontend Vite + React funcionando!</p>
     </div>
   );
 }
