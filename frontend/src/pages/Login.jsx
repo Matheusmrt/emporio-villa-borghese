@@ -1,17 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const navigate = useNavigate();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    alert(`Tentando logar com\nEmail: ${email}\nSenha: ${senha}`);
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/login`,
+        { email, senha }
+      );
+      alert("Login realizado com sucesso!");
+      navigate("/pedido");
+    } catch (error) {
+      alert("Erro ao fazer login: " + (error?.response?.data?.erro || error.message));
+    }
   }
 
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
-      <h1 style={{ color: "orange" }}>LOGIN FUNCIONAL</h1>
+      <h1 style={{ color: "orange" }}>LOGIN</h1>
       <form onSubmit={handleSubmit} style={{ display: "inline-block", textAlign: "left" }}>
         <div style={{ marginBottom: "1rem" }}>
           <label>Email:</label><br />
