@@ -1,0 +1,20 @@
+/* frontend/src/index.css */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #fff7ed;
+  color: #1a1a1a;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, button {
+  font-family: inherit;
+}
+
+/* utilitários de layout */
+* {
+  box-sizing: border-box;
+}
