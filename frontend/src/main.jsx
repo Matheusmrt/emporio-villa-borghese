@@ -1,13 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import './index.css';
+console.log("JS carregado com sucesso!");
 
-const rootEl = document.getElementById('root');
-if (rootEl) {
-  ReactDOM.createRoot(rootEl).render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-}
+document.body.innerHTML += "<p style='text-align:center; color: green;'>JS Executando</p>";
